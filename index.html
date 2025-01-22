@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="theme-toggle">
+    <button id="themeToggle" onclick="toggleTheme()">Switch Theme</button>
+  </div>
+
+  <h1>Student Management System</h1>
+  <form id="studentForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Enter student's name" required><br>
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" placeholder="Enter student's age" required><br>
+
+    <label for="citySearch">City:</label>
+    <input type="text" id="citySearch" placeholder="Search for a city" onkeyup="filterCities()" onfocus="showCitySearch()">
+    <select id="city" onclick="showCitySearch()">
+      <!-- City list populated dynamically -->
+    </select><br>
+
+    <h3>Subjects:</h3>
+    <label for="subjectSelect">Select Subject:</label>
+    <select id="subjectSelect">
+      <option value="Physics">Physics</option>
+      <option value="Chemistry">Chemistry</option>
+      <option value="Maths">Maths</option>
+      <option value="Biology">Biology</option>
+      <option value="Computer Science">Computer Science</option>
+    </select>
+    <button type="button" onclick="addPredefinedSubject()">Add Subject</button>
+    <div id="subjectsList"></div>
+
+    <!-- Hidden input for temporary subject data -->
+    <input type="hidden" id="subjectsData">
+
+    <br>
+    <button type="button" onclick="saveStudent()">Save Student</button>
+    <button type="button" onclick="clearStudents()">Clear All Students</button>
+    <button type="button" onclick="displayStudents()">Display Students</button>
+  </form>
+
+  <div id="output"></div>
+
+  <script src="object_literal.js"></script>
+</body>
+</html>
